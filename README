@@ -1,3 +1,26 @@
 This is a simple wordpress xml export to postgres importer.
 
-It may not be pretty but it works.
+
+Usage looks something like this:
+
+./wordpress2sql.py --input wordpress_export.xml --dbname blogdb --dbuser bloguser --dbtable blogtable
+
+
+This script expects that:
+
+    * there is no pass needed to connect to the db 
+    * that the database schema looks like this:
+
+       Column    |           Type           |                        Modifiers                        
+    -------------+--------------------------+---------------------------------------------------------
+    id          | integer                  | not null default nextval('items_item_id_seq'::regclass)
+    category_id | integer                  | not null
+    title       | character varying(250)   | not null
+    pub_date    | timestamp with time zone | not null
+    entry       | text                     | not null
+
+
+So this is something to keep in mind if you are planning on using it.
+
+After you import the items you might want to modify the sequence (if you use it).
+
