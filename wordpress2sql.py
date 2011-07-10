@@ -33,7 +33,7 @@ if options.inputfile:
         print "Input file does not exist"
         sys.exit(1)
 else:
-    parser.error("You hve to provide an input file")
+    parser.error("You have to provide an input file")
 if options.dbname:
     dbname = options.dbname
 else:
