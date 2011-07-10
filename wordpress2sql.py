@@ -17,7 +17,7 @@ import os.path
 # category id for every imported post
 category = 1
 
-usage = "usage: %prog [options] --input <input.xml> --dbname <dbname> --dbuser <dbuser>"
+usage = "usage: %prog [options] --input <input.xml> --dbname <dbname> --dbuser <dbuser> --dbtable <dbtable>"
 parser = OptionParser(usage=usage)
 parser.add_option("-d",action="store_true",dest="debug",default=False,help="Print debbugging messages")
 parser.add_option("--input",dest="inputfile",default=None,help="Wordpress export xml file to use")
