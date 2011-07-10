@@ -12,7 +12,6 @@
 from optparse import OptionParser
 from xml.dom.minidom import parse, parseString
 import sys
-import dateutil.parser
 import os.path
 
 # category id for every imported post
@@ -52,6 +51,12 @@ try:
     import psycopg2
 except ImportError:
     print "You need to have python psycopg2 module installed"
+    sys.exit(1)
+
+try:
+    import dateutil.parser
+except ImportError:
+    print "You need to have python dateutil module installed"
     sys.exit(1)
 
 def extractElement(elementName,item):
